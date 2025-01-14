@@ -20,8 +20,7 @@ public class MenuPatientCheckin {
 
 	@Given("Expand main menu")
 	public void expand_main_menu() throws InterruptedException {
-		driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-header/nav/div/div[2]/ul[1]/li/button"))
-				.click();
+		driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-header/nav/div/div[2]/ul[1]/li/button")).click();
 		Utils.addDelay();
 	}
 
@@ -34,10 +33,7 @@ public class MenuPatientCheckin {
 	@And("click on patient check in")
 	public void click_on_patient_check_in() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-//		driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[1]/ul/li[1]")).click();
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[1]/ul/li[1]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[1]/ul/li[1]"))).click();
 		Utils.addDelay();
 	}
 

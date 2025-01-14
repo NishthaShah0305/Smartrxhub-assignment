@@ -26,3 +26,33 @@ Feature: feature to test smartrxassignment functionality
     When click on Administration
     And click on patient check in
     Then patient check in module opens
+
+  #Health card field test
+  Scenario: check the health card is selected from drop down
+    Given click on health card select field
+    When select one option from dropdown
+    Then check the dropdown option is selected
+
+  #check card number field and add new patient button
+  Scenario: check the search of card number field works and new patient can be added from there.
+    Given check record not found is displayed
+    When click on Add New Patient button
+    Then click on card number and search with text
+
+  #check for phone number field
+  Scenario: Search phone number in system
+    Given Enter new number not in the system
+    When record not found is displayed for phone number 
+    Then show suggestions related to phone number
+
+  #check for first name field
+  Scenario: Search first name in system
+    Given Enter new first name not in the system 
+    When record not found is displayed for first name
+    Then show suggestions related to first name
+
+  #check for last name field
+  Scenario: Search last name in system
+    Given Enter new last name not in the system 
+    When record not found is displayed for last name
+    Then show suggestions related to last name

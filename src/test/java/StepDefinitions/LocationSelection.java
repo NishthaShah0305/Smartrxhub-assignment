@@ -34,28 +34,27 @@ public class LocationSelection {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-		DropDown = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mat-select-value-1\"]/span")));
+		DropDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mat-select-0")));
 		DropDown.click();
 	}
 
 	@When("choose location from dropdown")
 	public void choose_location_from_dropdown() throws InterruptedException {
+		WebElement location = driver.findElement(By.xpath("//*[@id=\"mat-option-0\"]/span")); 
 		Utils.addDelay();
-		driver.findElement(By.xpath("//*[@id=\"mat-option-1\"]")).click();
+		location.click(); 
 	}
 
 	@And("click confirm")
 	public void click_confirm() throws InterruptedException {
-		WebElement confirmButton = driver
-				.findElement(By.xpath("//*[@id=\"mat-dialog-0\"]/fuse-confirm-location/div/div/div/button/span[1]"));
+		WebElement confirmButton = driver.findElement(By.xpath("//*[@id=\"mat-dialog-0\"]/fuse-confirm-location/div/div/div/button/span[1]"));
 		Utils.addDelay();
 		confirmButton.click();
 	}
 
 	@Then("land on trillium smartrx homepage")
 	public void land_on_trillium_smartrx_homepage() {
-		String expectedUrl = "https://trillium.smartrxhub.com/stg/panel/v9/#/management/dashboard?index=1";
+		String expectedUrl = "https://trillium.smartrxhub.com/stg/panel/v11/#/management/dashboard?index=1";
 		String actualUrl = driver.getCurrentUrl();
 		assertEquals(expectedUrl, actualUrl);
 	}

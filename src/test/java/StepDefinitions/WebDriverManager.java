@@ -14,8 +14,8 @@ public class WebDriverManager {
 
 	public static WebDriver getDriver() {
 		if (driver == null) {
-			System.setProperty("webdriver.chrome.driver","F:/nishtha/automation/Smartrxhub/src/test/resources/Drivers/chromedriver.exe");
-	   		
+			System.setProperty("webdriver.chrome.driver","F:/nishtha/Smartrxhub-assignment/src/test/resources/Drivers/chromedriver.exe");
+			
 		   	driver = new ChromeDriver();
 		   	
 		   	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
